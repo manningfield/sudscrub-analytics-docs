@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Sud Scrub Analytics</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 48px auto; padding: 0 20px; color: #222; line-height: 1.6; }
+  h1 { margin-bottom: 4px; }
+  h2 { margin-top: 32px; }
+  .sub { color: #666; margin-top: 0; }
+  a { color: #0366d6; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #eee; color: #888; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<h1>Privacy Policy</h1>
+<p class="sub">Sud Scrub Analytics — last updated April 22, 2026</p>
+
+<h2>1. Overview</h2>
+<p>Sud Scrub Analytics ("the Application") is a private internal tool used by SUDScrub ("the Company") and its authorized financial consultants to analyze the Company's own accounting data stored in QuickBooks Online. This Policy describes how the Application handles data accessed from QuickBooks Online on behalf of authorized users.</p>
+
+<h2>2. Data We Access</h2>
+<p>With authorization from an admin user of the connected QuickBooks Online company file, the Application accesses the following read-only data through the Intuit Accounting API:</p>
+<ul>
+  <li>Chart of Accounts and account metadata</li>
+  <li>Journal entries, bills, invoices, and transaction line items</li>
+  <li>Balance sheet, profit and loss, and general ledger reports</li>
+  <li>Vendor and customer summary totals</li>
+  <li>Company profile information (legal name, fiscal year start, currency)</li>
+</ul>
+<p>The Application does not access payroll data, employee personally identifiable information (PII), bank account or credit card numbers, or payment credentials. The Application does not write, modify, or delete any data in QuickBooks Online.</p>
+
+<h2>3. How We Use Data</h2>
+<p>Accessed data is used solely to produce internal financial reports and cashflow models for the Company. Specifically:</p>
+<ul>
+  <li>Monthly EBITDA bridges and adjusted-EBITDA analysis</li>
+  <li>Vendor spend analysis and expense categorization</li>
+  <li>Cash flow forecasting and payment schedule calibration</li>
+  <li>Balance sheet trend reporting</li>
+</ul>
+<p>Data is never used for advertising, marketing, training machine learning models, or any purpose outside of the Company's internal financial operations.</p>
+
+<h2>4. How We Store Data</h2>
+<p>OAuth access and refresh tokens are stored in a restricted-permission directory on the authorized consultant's workstation. Pulled accounting data is cached locally on the same workstation and on the Company's private cloud storage for the duration needed to produce the applicable report. The Application does not transmit data to third-party servers.</p>
+
+<h2>5. How We Share Data</h2>
+<p>The Application does not share Company data with any third party. Reports produced from the data are delivered only to the Company's internal stakeholders and retained consultants.</p>
+
+<h2>6. Data Retention and Deletion</h2>
+<p>Cached accounting data may be retained for the duration of the Company's engagement with its consultants, typically aligned with the current and prior fiscal year. Upon request from an authorized Company representative, all cached data and tokens will be deleted within seven (7) business days. Disconnecting the Application from QuickBooks Online (see <a href="disconnect.html">Disconnect</a>) revokes all future API access.</p>
+
+<h2>7. Security</h2>
+<p>The Application authenticates to QuickBooks Online using OAuth 2.0. Tokens are stored with restrictive file permissions and never logged or transmitted to third parties. All API traffic occurs over TLS. If a token is suspected to be compromised, the Company should disconnect the Application from QuickBooks Online immediately and contact the operator.</p>
+
+<h2>8. Children</h2>
+<p>The Application is not directed to children under 13, does not knowingly collect data from children, and is not available to the public.</p>
+
+<h2>9. Changes to this Policy</h2>
+<p>This Policy may be updated from time to time. The "last updated" date above will reflect the most recent revision. Authorized users will be notified of material changes directly.</p>
+
+<h2>10. Contact</h2>
+<p>Questions about this Policy can be directed to <a href="mailto:manning.field@gmail.com">manning.field@gmail.com</a>.</p>
+
+<footer>© 2026 SUDScrub. Internal use only.</footer>
+</body>
+</html>
