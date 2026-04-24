@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TikTok Shop — OAuth Callback</title>
+<meta name="robots" content="noindex">
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 720px; margin: 4rem auto; padding: 0 1.5rem; color: #222; }
+  h1 { font-size: 1.4rem; margin-bottom: .25rem; }
+  .sub { color: #666; margin-top: 0; }
+  .field { margin: 1.5rem 0; padding: 1rem; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; }
+  .label { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: #57606a; margin-bottom: .5rem; }
+  .value { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: .95rem; word-break: break-all; user-select: all; }
+  .copy { margin-top: .5rem; font-size: .8rem; }
+  .missing { color: #cf222e; }
+  button { font-size: .85rem; padding: .35rem .75rem; border: 1px solid #d0d7de; background: #fff; border-radius: 6px; cursor: pointer; }
+  button:hover { background: #f6f8fa; }
+  .footer { color: #57606a; font-size: .8rem; margin-top: 3rem; border-top: 1px solid #d8dee4; padding-top: 1rem; }
+</style>
+</head>
+<body>
+<h1>TikTok Shop — OAuth Callback</h1>
+<p class="sub">Paste the <code>code</code> below into the token-exchange step. This page is internal to SUDScrub.</p>
+
+<div class="field">
+  <div class="label">Authorization code</div>
+  <div class="value" id="code">—</div>
+  <div class="copy"><button onclick="copyEl('code')">Copy code</button></div>
+</div>
+
+<div class="field">
+  <div class="label">State</div>
+  <div class="value" id="state">—</div>
+</div>
+
+<div class="field">
+  <div class="label">Full query string</div>
+  <div class="value" id="raw">—</div>
+</div>
+
+<p class="footer">
+  If any field shows <em>missing</em>, the redirect didn't include that parameter.
+  Close this tab when you're done — the code is single-use and short-lived.
+</p>
+
+<script>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const setField = (id, val) => {
+      const el = document.getElementById(id);
+      if (val) { el.textContent = val; }
+      else { el.textContent = "missing"; el.classList.add("missing"); }
+    };
+    setField("code",  params.get("code"));
+    setField("state", params.get("state"));
+    setField("raw",   window.location.search || "—");
+  })();
+  function copyEl(id) {
+    const text = document.getElementById(id).textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const b = event.target;
+      const orig = b.textContent;
+      b.textContent = "Copied";
+      setTimeout(() => { b.textContent = orig; }, 1200);
+    });
+  }
+</script>
+</body>
+</html>
